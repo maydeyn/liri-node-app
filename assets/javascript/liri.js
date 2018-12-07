@@ -29,15 +29,36 @@ inquirer
   ])
   .then(function(user) {
     switch (user.command) {
+      //=====CONCERTS=====
       case "concert":
-        var bandUrl = "";
-        console.log(user.search);
+        axios
+          .get(
+            "https://rest.bandsintown.com/artists/" +
+              user.search +
+              "/events?app_id=" +
+              band
+          )
+          .then(function(bandRes) {
+            console
+              .log
+              // "Venue: " + bandRes.data.keys(venue)
+              // "\nLocation: " +
+              // bandRes.data.venue.city +
+              // ", " +
+              // bandres.data.venue.country +
+              // "\nDate: " +
+              // bandRes.data.datetime.moment().format("MMM Do YY")
+              ();
+          });
 
         break;
+      //=====SPOTIFY=====
       case "song":
         console.log("SONG");
 
         break;
+
+      //=====MOVIES=====
       case "movie":
         axios
           .get(
@@ -49,13 +70,13 @@ inquirer
           .then(function(movieRes) {
             console.log(
               "Title: " +
-                movieRes.data.Title +
-                "\nYear: " +
-                movieRes.data.Year +
-                "\nIMDB Rating: " +
-                movieRes.data.imdbRating +
-                "\nRotten Tomatoes Rating: " +
-                movieRes.data.Ratings[1] +
+              movieRes.data.Title +
+              "\nYear: " +
+              movieRes.data.Year +
+              "\nIMDB Rating: " +
+              movieRes.data.imdbRating +
+              "\nRotten Tomatoes Rating: " +
+              movieRes.data.Ratings[1] + // help
                 "\nCountry: " +
                 movieRes.data.Country +
                 "\nLanguage: " +
