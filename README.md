@@ -22,24 +22,24 @@ Users can use the following commands:
   - The album that the song is from
 
 - `movie-this <movie name here>`
-  - Title of the movie.
-  - Year the movie came out.
-  - IMDB Rating of the movie.
-  - Rotten Tomatoes Rating of the movie.
-  - Country where the movie was produced.
-  - Language of the movie.
-  - Plot of the movie.
-  - Actors in the movie.
+  - Title of the movie
+  - Year the movie came out
+  - IMDB Rating of the movie
+  - Rotten Tomatoes Rating of the movie
+  - Country where the movie was produced
+  - Language of the movie
+  - Plot of the movie
+  - Actors in the movie
 
 * `do-what-it-says`
 
-### This app is supported by the following APIs:
+### APIs:
 
 - [OMDb API](http://www.omdbapi.com/)
 - [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)
 - [Spotify](https://developer.spotify.com/documentation/web-api/)
 
-### This app contains the following packages:
+### Node Packages:
 
 - [axios](https://www.npmjs.com/package/axios)
 - [dotenv](https://www.npmjs.com/package/dotenv)
