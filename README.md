@@ -6,30 +6,31 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ### How to use Liri
 
-Users can use the following commands:
+Users can pick one from one of the following categories, then type in what you would like to search.
 
-- `concert-this <artist/band name here>`
+#### concert (data provided by: [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api))
 
-  - Name of the venue
-  - Venue location
-  - Date of the Event (use moment to format this as "MM/DD/YYYY")
+- Name of the venue
+- Venue location
+- Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-- `spotify-this-song <song name here>`
+#### song (data provided by: [Spotify](https://developer.spotify.com/documentation/web-api/))
 
-  - Artist(s)
-  - The song's name
-  - A preview link of the song from Spotify
-  - The album that the song is from
+- Artist(s)
+- The song's name
+- A preview link of the song from Spotify
+- The album that the song is from
 
-- `movie-this <movie name here>`
-  - Title of the movie
-  - Year the movie came out
-  - IMDB Rating of the movie
-  - Rotten Tomatoes Rating of the movie
-  - Country where the movie was produced
-  - Language of the movie
-  - Plot of the movie
-  - Actors in the movie
+#### movie (data provided by: [OMDb API](http://www.omdbapi.com/))
+
+- Title of the movie
+- Year the movie came out
+- IMDB Rating of the movie
+- Rotten Tomatoes Rating of the movie
+- Country where the movie was produced
+- Language of the movie
+- Plot of the movie
+- Actors in the movie
 
 * `do-what-it-says`
 
