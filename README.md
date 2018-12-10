@@ -6,10 +6,10 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ### How to use Liri
 
-Type this command in your terminal:
-`node liri.js`
+1. Type this command in your terminal:
+   `node liri.js`
 
-Users can pick one from one of the following categories, then type in what you would like to search.
+2. Users can pick one from one of the following categories, then type in what you would like to search.
 
 ![Image of command options](/assets/images/command-options.png)
 
