@@ -28,9 +28,8 @@ function userPrompt() {
           if (user.command === "exit") {
             console.log("bye bye!");
             process.exit();
-          }
-          if (user.command === "do-what-it-says") {
-            return doWhatItSays();
+          } else if (user.command === "do-what-it-says") {
+            doWhatItSays();
           }
         }
       },
@@ -55,12 +54,13 @@ function userPrompt() {
           break;
 
         case "do-what-it-says":
-          doWhatItSays(user.search);
+          doWhatItSays();
           break;
       }
     });
 }
 
+//do what it says
 function doWhatItSays(searchTerm) {
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
@@ -71,6 +71,7 @@ function doWhatItSays(searchTerm) {
   });
 }
 
+// bands in town concert
 function fetchBand(searchTerm) {
   axios
     .get(
@@ -84,29 +85,28 @@ function fetchBand(searchTerm) {
       if (bandRes.data === "{warn=Not found}\n") {
         console.log("Not found");
         userPrompt();
-      } else {
-        for (var i = 0; i < bandRes.data.length; i++) {
-          console.log(
-            "Venue Name: " +
-              bandRes.data[i].venue.name +
-              "\nLocation: " +
-              bandRes.data[i].venue.city +
-              ", " +
-              bandRes.data[i].venue.country +
-              "\nDate: " +
-              moment(bandRes.data[i].datetime).format("MM/DD/YYYY") +
-              "\n============================"
-          );
-        }
-        restartPrompt();
       }
-    })
-    .catch(function(error) {
-      console.log(error);
+      for (var i = 0; i < bandRes.data.length; i++) {
+        console.log(
+          "Venue Name: " +
+            bandRes.data[i].venue.name +
+            "\nLocation: " +
+            bandRes.data[i].venue.city +
+            ", " +
+            bandRes.data[i].venue.country +
+            "\nDate: " +
+            moment(bandRes.data[i].datetime).format("MM/DD/YYYY") +
+            "\n============================"
+        );
+      }
+      restartPrompt();
     });
 }
 
 function fetchSong(searchTerm) {
+  if (!searchTerm) {
+    searchTerm = "The Sign Ace of Base";
+  }
   spotify.search({ type: "track", query: searchTerm, limit: 5 }, function(
     error,
     data
@@ -115,24 +115,32 @@ function fetchSong(searchTerm) {
       return console.log("Error occurred: " + error);
     }
     var songRes = data.tracks.items;
-    for (var i = 0; i < songRes.length; i++) {
-      console.log(
-        "Artist(s): " +
-          songRes[i].artists[i].name +
-          "\nSong: " +
-          songRes[i].name +
-          "\nOpen in Spotify: " +
-          songRes[i].external_urls.spotify +
-          "\nAlbum: " +
-          songRes[i].album.name +
-          "\n============================"
-      );
-    }
-    // restartPrompt();
+    // for (var i = 0; i < songRes.length; i++) {
+    console.log(
+      "Artist(s): " +
+        songRes[0].artists[0].name +
+        "\nSong: " +
+        songRes[0].name +
+        "\nOpen in Spotify: " +
+        songRes[0].external_urls.spotify +
+        "\nAlbum: " +
+        songRes[0].album.name +
+        "\n============================"
+    );
+    // }
+    restartPrompt();
   });
 }
 
+// omdb movies
 function fetchMovie(searchTerm) {
+  if (!searchTerm) {
+    searchTerm = "Mr. Nobody";
+    console.log(
+      "If you haven't watched 'Mr. Nobody', then you should: http://www.imdb.com/title/tt0485947/" +
+        "\nIt's on Netflix!"
+    );
+  }
   axios
     .get(
       "http://www.omdbapi.com/?t=" +
@@ -157,12 +165,15 @@ function fetchMovie(searchTerm) {
           "\nPlot: " +
           movieRes.data.Plot +
           "\nActors: " +
-          movieRes.data.Actors
+          movieRes.data.Actors +
+          "\n================================================"
       );
+
+      restartPrompt();
     });
-  restartPrompt();
 }
 
+// asks user if they want to go back to main menu or exit after each search
 function restartPrompt() {
   inquirer
     .prompt([
@@ -177,8 +188,8 @@ function restartPrompt() {
       if (resetPrompt.resetOptions === "Yes, bring me back to the menu!") {
         userPrompt();
       } else {
-        process.exit();
         console.log("bye bye!");
+        process.exit();
       }
     });
 }
