@@ -26,10 +26,11 @@ function userPrompt() {
       {
         when: function(user) {
           if (user.command === "exit") {
+            console.log("bye bye!");
             process.exit();
           }
           if (user.command === "do-what-it-says") {
-            return;
+            return doWhatItSays();
           }
         }
       },
@@ -55,7 +56,6 @@ function userPrompt() {
 
         case "do-what-it-says":
           doWhatItSays(user.search);
-          return;
           break;
       }
     });
@@ -67,6 +67,7 @@ function doWhatItSays(searchTerm) {
       return console.log(error);
     }
     console.log(data);
+    process.exit();
   });
 }
 
@@ -97,7 +98,7 @@ function fetchBand(searchTerm) {
               "\n============================"
           );
         }
-        userPrompt();
+        restartPrompt();
       }
     })
     .catch(function(error) {
@@ -106,27 +107,28 @@ function fetchBand(searchTerm) {
 }
 
 function fetchSong(searchTerm) {
-  spotify.search({ type: "track", query: searchTerm }, function(
+  spotify.search({ type: "track", query: searchTerm, limit: 5 }, function(
     error,
-    songRes
+    data
   ) {
-    for (var i = 0; i < songRes.length; i++) {
-      // console.log(
-      //   "==============" +
-      //     "\nArtist Name: " +
-      //     songRes[i].artists.name +
-      //     "\nSong: " +
-      //     songRes[i].name +
-      //     "\nOpen in Spotify: " +
-      //     songRes[i].preview_url +
-      //     "\nAlbum: " +
-      //     songRes[i].album.name +
-      //     "\n==============="
-      // );
-      if (error) {
-        return console.log("Error occurred: " + error);
-      }
+    if (error) {
+      return console.log("Error occurred: " + error);
     }
+    var songRes = data.tracks.items;
+    for (var i = 0; i < songRes.length; i++) {
+      console.log(
+        "Artist(s): " +
+          songRes[i].artists[i].name +
+          "\nSong: " +
+          songRes[i].name +
+          "\nOpen in Spotify: " +
+          songRes[i].external_urls.spotify +
+          "\nAlbum: " +
+          songRes[i].album.name +
+          "\n============================"
+      );
+    }
+    // restartPrompt();
   });
 }
 
@@ -158,9 +160,26 @@ function fetchMovie(searchTerm) {
           movieRes.data.Actors
       );
     });
+  restartPrompt();
 }
 
-function restart() {
-  inquirer.prompt([{}]);
+function restartPrompt() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Would you like to search for something else?",
+        name: "resetOptions",
+        choices: ["Yes, bring me back to the menu!", "No, exit."]
+      }
+    ])
+    .then(function(resetPrompt) {
+      if (resetPrompt.resetOptions === "Yes, bring me back to the menu!") {
+        userPrompt();
+      } else {
+        process.exit();
+        console.log("bye bye!");
+      }
+    });
 }
 userPrompt();
