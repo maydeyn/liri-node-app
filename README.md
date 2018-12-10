@@ -6,7 +6,12 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ### How to use Liri
 
+Type this command in your terminal:
+`node liri.js`
+
 Users can pick one from one of the following categories, then type in what you would like to search.
+
+![Image of command options](assets/javascript/images/command-options)
 
 #### concert (data provided by: [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api))
 
