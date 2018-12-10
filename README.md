@@ -36,7 +36,9 @@ Enter the name of the song, and the following information will be displayed:
 
 ![Gif of song search](/assets/images/song.gif)
 
-#### movie ([OMDb](http://www.omdbapi.com/))
+#### Search for a movie ([OMDb](http://www.omdbapi.com/))
+
+Enter the title of a movie, and the following information will be displayed:
 
 - Title of the movie
 - Year the movie came out
@@ -50,6 +52,12 @@ Enter the name of the song, and the following information will be displayed:
 ![Gif of movie search](assets/images/movie.gif)
 
 - `do-what-it-says`
+
+#### Reset
+
+After each search, you can choose to search for something else or exit the app.
+
+![Gif of reset](assets/images/reset.gif)
 
 ### APIs:
 
