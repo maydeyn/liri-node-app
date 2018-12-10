@@ -1,4 +1,4 @@
-# liri-node-app
+# Liri
 
 ## About Liri
 
