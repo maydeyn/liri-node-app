@@ -4,7 +4,7 @@
 
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
-### How to use Liri
+## How to use Liri
 
 1. Type this command in your terminal:
    `node liri.js`
@@ -15,7 +15,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ![Image of command options](/assets/images/command-options.png)
 
-#### Search for a concert ([Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)):
+### - Search for a concert ([Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)):
 
 Enter the artist(s) name, and the following information will be displayed:
 
@@ -25,7 +25,7 @@ Enter the artist(s) name, and the following information will be displayed:
 
 ![Gif of concert search](/assets/images/concert.gif)
 
-### Search for a song ([Spotify](https://developer.spotify.com/documentation/web-api/))
+### - Search for a song ([Spotify](https://developer.spotify.com/documentation/web-api/))
 
 Enter the name of the song, and the following information will be displayed:
 
@@ -36,7 +36,7 @@ Enter the name of the song, and the following information will be displayed:
 
 ![Gif of song search](/assets/images/song.gif)
 
-#### Search for a movie ([OMDb](http://www.omdbapi.com/))
+### - Search for a movie ([OMDb](http://www.omdbapi.com/))
 
 Enter the title of a movie, and the following information will be displayed:
 
@@ -51,15 +51,19 @@ Enter the title of a movie, and the following information will be displayed:
 
 ![Gif of movie search](assets/images/movie.gif)
 
-- `do-what-it-says`
+### `do-what-it-says`
 
-#### Reset
+Try it!
+
+### - Reset
 
 After each search, you can choose to search for something else or exit the app.
 
 ![Gif of reset](assets/images/reset.gif)
 
-### APIs:
+## Resources:
+
+### - APIs:
 
 - [OMDb API](http://www.omdbapi.com/)
 - [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)
