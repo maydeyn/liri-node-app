@@ -9,24 +9,34 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 1. Type this command in your terminal:
    `node liri.js`
 
-2. Users can pick one from one of the following categories, then type in what you would like to search.
+2. Make sure you have all the packages installed! You may do so with `npm i` command.
+
+3. Users can pick one from one of the following categories, then type in what you would like to search.
 
 ![Image of command options](/assets/images/command-options.png)
 
-#### concert (data provided by: [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api))
+#### Search for a concert ([Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)):
+
+Enter the artist(s) name, and the following information will be displayed:
 
 - Name of the venue
 - Venue location
-- Date of the Event (use moment to format this as "MM/DD/YYYY")
+- Date of the Event
 
-#### song (data provided by: [Spotify](https://developer.spotify.com/documentation/web-api/))
+![Gif of concert search](/assets/images/concert.gif)
+
+### Search for a song ([Spotify](https://developer.spotify.com/documentation/web-api/))
+
+Enter the name of the song, and the following information will be displayed:
 
 - Artist(s)
 - The song's name
 - A preview link of the song from Spotify
 - The album that the song is from
 
-#### movie (data provided by: [OMDb API](http://www.omdbapi.com/))
+![Gif of song search](/assets/images/song.gif)
+
+#### movie ([OMDb](http://www.omdbapi.com/))
 
 - Title of the movie
 - Year the movie came out
@@ -37,7 +47,9 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 - Plot of the movie
 - Actors in the movie
 
-* `do-what-it-says`
+![Gif of movie search](assets/images/movie.gif)
+
+- `do-what-it-says`
 
 ### APIs:
 
