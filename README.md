@@ -9,13 +9,13 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 1. Type this command in your terminal:
    `node liri.js`
 
-2. Make sure you have all the packages installed! You may do so with `npm i` command.
+2. Make sure you have all the packages installed! You may do so by typing this command in your terminal: `npm i`
 
 3. Users can pick one from one of the following categories, then type in what you would like to search.
 
 ![Image of command options](/assets/images/command-options.png)
 
-### - Search for a concert ([Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)):
+- ### Search for a concert ([Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)):
 
 Enter the artist(s) name, and the following information will be displayed:
 
