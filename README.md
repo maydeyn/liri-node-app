@@ -11,7 +11,7 @@ Type this command in your terminal:
 
 Users can pick one from one of the following categories, then type in what you would like to search.
 
-![Image of command options](/assets/javascript/images/command-options.png)
+![Image of command options](/assets/images/command-options.png)
 
 #### concert (data provided by: [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api))
 
