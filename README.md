@@ -55,7 +55,7 @@ Enter the title of a movie, and the following information will be displayed:
 
 Try it!
 
-### - Reset
+- ### Reset
 
 After each search, you can choose to search for something else or exit the app.
 
@@ -63,7 +63,7 @@ After each search, you can choose to search for something else or exit the app.
 
 ## Resources:
 
-### - APIs:
+### APIs:
 
 - [OMDb API](http://www.omdbapi.com/)
 - [Bandsintown](https://manager.bandsintown.com/support/bandsintown-api)
