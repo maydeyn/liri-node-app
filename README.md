@@ -25,7 +25,7 @@ Enter the artist(s) name, and the following information will be displayed:
 
 ![Gif of concert search](/assets/images/concert.gif)
 
-### - Search for a song ([Spotify](https://developer.spotify.com/documentation/web-api/))
+- ### Search for a song ([Spotify](https://developer.spotify.com/documentation/web-api/))
 
 Enter the name of the song, and the following information will be displayed:
 
@@ -36,7 +36,7 @@ Enter the name of the song, and the following information will be displayed:
 
 ![Gif of song search](/assets/images/song.gif)
 
-### - Search for a movie ([OMDb](http://www.omdbapi.com/))
+- ### Search for a movie ([OMDb](http://www.omdbapi.com/))
 
 Enter the title of a movie, and the following information will be displayed:
 
@@ -51,8 +51,7 @@ Enter the title of a movie, and the following information will be displayed:
 
 ![Gif of movie search](assets/images/movie.gif)
 
-### `do-what-it-says`
-
+- ### Do what it says!
 Try it!
 
 - ### Reset
